@@ -28,3 +28,4 @@ D:\Users\ashcherbakov\RiderProjects\LaboratoriumASP NET\WebApp\obj\Debug\net8.0\
 D:\Users\ashcherbakov\RiderProjects\LaboratoriumASP NET\WebApp\obj\Debug\net8.0\WebApp.pdb
 D:\Users\ashcherbakov\RiderProjects\LaboratoriumASP NET\WebApp\obj\Debug\net8.0\WebApp.genruntimeconfig.cache
 D:\Users\ashcherbakov\RiderProjects\LaboratoriumASP NET\WebApp\obj\Debug\net8.0\ref\WebApp.dll
+D:\Users\ashcherbakov\RiderProjects\LaboratoriumASP NET\WebApp\obj\Debug\net8.0\WebApp.sourcelink.json

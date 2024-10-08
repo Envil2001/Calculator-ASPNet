@@ -9,8 +9,22 @@ public enum Operator
     Add, Sub, Mul, Div
 }
 
+
 public class HomeController : Controller
+
 {
+    private int AgeCalculating(DateTime birth, DateTime future)
+    {
+        var age = future.Year - birth.Year;
+        // 2024 - 2004 = 20
+        if (future < birth.AddYears(age))
+        {
+            --age;
+        }
+
+        return age;
+    }
+
     private readonly ILogger<HomeController> _logger;
 
     public HomeController(ILogger<HomeController> logger)
@@ -65,7 +79,17 @@ public class HomeController : Controller
         
         return View();
     }
+    
+    public IActionResult Age()
+    {
+        DateTime birth = new DateTime(1990, 5, 15);
+        DateTime future = new DateTime(2024, 10, 8);
 
+        int age = AgeCalculating(birth, future);
+
+        ViewBag.Result = $"Wiek osoby: {age} lat";
+        return View();
+    }
     public IActionResult About()
     {
         return View();
