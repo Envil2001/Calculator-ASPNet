@@ -80,11 +80,7 @@ public class HomeController : Controller
         return View();
     }
     
-    public IActionResult Age()
-    {
-        DateTime birth = new DateTime(1990, 5, 15);
-        DateTime future = new DateTime(2024, 10, 8);
-
+    public IActionResult Age(DateTime birth, DateTime future) {
         int age = AgeCalculating(birth, future);
 
         ViewBag.Result = $"Wiek osoby: {age} lat";
