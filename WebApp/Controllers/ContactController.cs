@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using WebApp.Models;
 using WebApp.Services;
 
@@ -15,14 +16,21 @@ public class ContactController : Controller
 
     public IActionResult Index()
     {
-        var contacts = _contactService.FindAll();
+        var contacts = _contactService.FindAll(); 
         return View(contacts);
     }
 
     public IActionResult Create()
     {
-        return View();
+        var model = new Contact
+        {
+            Organizations = _contactService.FindAllOrganizations()
+                .Select(o => new SelectListItem { Value = o.Id.ToString(), Text = o.Title })
+                .ToList()
+        };
+        return View(model);
     }
+
 
     [HttpPost]
     public IActionResult Create(Contact contact)
@@ -32,9 +40,12 @@ public class ContactController : Controller
             _contactService.Add(contact);
             return RedirectToAction(nameof(Index));
         }
+
+        contact.Organizations = _contactService.FindAllOrganizations()
+            .Select(o => new SelectListItem { Value = o.Id.ToString(), Text = o.Title })
+            .ToList();
         return View(contact);
     }
-
     public IActionResult Edit(int id)
     {
         var contact = _contactService.FindById(id);

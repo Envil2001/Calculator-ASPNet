@@ -1,4 +1,9 @@
-﻿namespace WebApp.Models;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using WebApp.Entities;
+
+namespace WebApp.Models;
 
 public class Contact
 {
@@ -7,4 +12,13 @@ public class Contact
     public string Email { get; set; }
     public string Phone { get; set; }
     public DateTime Birth { get; set; }
+
+    [HiddenInput]
+    public int OrganizationId { get; set; }
+
+    [ValidateNever]
+    public OrganizationEntity? Organization { get; set; }
+
+    [ValidateNever]
+    public List<SelectListItem> Organizations { get; set; }
 }

@@ -2,6 +2,8 @@
 
 <h2>Lista kontaktów</h2>
 
+@if (Model.Any())
+{
 <table class="table">
     <thead>
     <tr>
@@ -9,24 +11,31 @@
         <th>Email</th>
         <th>Telefon</th>
         <th>Data urodzenia</th>
+        <th>Organizacja</th>
         <th>Akcje</th>
     </tr>
     </thead>
     <tbody>
     @foreach (var contact in Model)
     {
-        <tr>
-            <td>@contact.Name</td>
-            <td>@contact.Email</td>
-            <td>@contact.Phone</td>
-            <td>@contact.Birth.ToShortDateString()</td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@contact.Id">Edytuj</a> |
-                <a asp-action="Delete" asp-route-id="@contact.Id">Usuń</a>
-            </td>
-        </tr>
+    <tr>
+        <td>@contact.Name</td>
+        <td>@contact.Email</td>
+        <td>@contact.Phone</td>
+        <td>@contact.Birth.ToShortDateString()</td>
+        <td>@contact.Organization?.Title</td> 
+        <td>
+            <a asp-action="Edit" asp-route-id="@contact.Id" class="btn btn-warning">Edytuj</a>
+            <a asp-action="Delete" asp-route-id="@contact.Id" class="btn btn-danger">Usuń</a>
+        </td>
+    </tr>
     }
     </tbody>
 </table>
+}
+else
+{
+<p>Brak kontaktów do wyświetlenia.</p>
+}
 
 <a asp-action="Create" class="btn btn-primary">Dodaj kontakt</a>

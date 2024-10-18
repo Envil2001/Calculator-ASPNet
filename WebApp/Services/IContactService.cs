@@ -1,4 +1,5 @@
-﻿using WebApp.Models;
+﻿using WebApp.Entities;
+using WebApp.Models;
 
 namespace WebApp.Services;
 
@@ -9,4 +10,5 @@ public interface IContactService
     List<Contact> FindAll();
     Contact? FindById(int id);
     void Update(Contact contact);
+    List<OrganizationEntity> FindAllOrganizations();
 }
