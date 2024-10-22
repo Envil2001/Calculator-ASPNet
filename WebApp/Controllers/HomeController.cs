@@ -9,102 +9,68 @@ public enum Operator
     Add, Sub, Mul, Div
 }
 
-
 public class HomeController : Controller
-
-{
-    private int AgeCalculating(DateTime birth, DateTime future)
     {
-        var age = future.Year - birth.Year;
-        // 2024 - 2004 = 20
-        if (future < birth.AddYears(age))
+        public IActionResult Index()
         {
-            --age;
+            return View();
         }
 
-        return age;
-    }
-
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
-    {
-        _logger = logger;
-    }
-    // Dodaj plik widoku 
-    public IActionResult Calculator(Operator? op, double? a, double? b)
-    {
-        if (a is null || b is null)
+        public IActionResult Privacy()
         {
-            ViewBag.ErrorMessage = "Niepoprawny format liczby w parametrze a lub b";
-            return View("CustomError");
+            return View();
         }
 
-        if (op is null)
+        public IActionResult About()
         {
-            ViewBag.Result = "Invalid operation";
-            return View("CustomError");
+            ViewData["User"] = "Bomj"; 
+            return View();
         }
-        ViewBag.Num1 = a;
-        ViewBag.Num2 = b;
-        
 
-        switch (op)
+        public IActionResult Calculator(string op, double? a, double? b)
         {
-            case Operator.Add:
-                ViewBag.Result = a + b;
-                ViewBag.Operator = "+";
-                break;
-            case Operator.Sub:
-                ViewBag.Result = a - b;
-                ViewBag.Operator = "-";
-                break;
-            case Operator.Div:
-                ViewBag.Result = a * b;
-                ViewBag.Operator = "*";
-                break;
-            case Operator.Mul:
-                if (b != 0)
-                {
-                    ViewBag.Result = a / b;
-                }
-                else
-                {
-                    ViewBag.Result = "Cannot divide by zero";
-                    return View();
-                }
-                ViewBag.Operator = "/";
-                break;
+            if (op == null || a == null || b == null)
+            {
+                ViewBag.ErrorMessage = "Nie wszystkie parametry zostały podane. Upewnij się, że przekazano op, a oraz b.";
+                return View("CustomError");
+            }
+
+            double result = 0;
+            string operatorSymbol;
+
+            switch (op.ToLower())
+            {
+                case "add":
+                    result = a.Value + b.Value;
+                    operatorSymbol = "+";
+                    break;
+                case "sub":
+                    result = a.Value - b.Value;
+                    operatorSymbol = "-";
+                    break;
+                case "mul":
+                    result = a.Value * b.Value;
+                    operatorSymbol = "*";
+                    break;
+                case "div":
+                    if (b.Value == 0)
+                    {
+                        ViewBag.ErrorMessage = "Błąd: dzielenie przez zero jest niemożliwe.";
+                        return View("CustomError");
+                    }
+                    result = a.Value / b.Value;
+                    operatorSymbol = "/";
+                    break;
+                default:
+                    ViewBag.ErrorMessage = "Nieprawidłowy operator.";
+                    return View("CustomError");
+            }
+
+            ViewBag.Num1 = a;
+            ViewBag.Num2 = b;
+            ViewBag.Operator = operatorSymbol;
+            ViewBag.Result = result;
+
+            return View();
         }
-        
-        return View();
     }
-    
-    public IActionResult Age(DateTime birth, DateTime future) {
-        int age = AgeCalculating(birth, future);
-
-        ViewBag.Result = $"Wiek osoby: {age} lat";
-        return View();
-    }
-    public IActionResult About()
-    {
-        return View();
-    }
-    
-    public IActionResult Index()
-    {
-        return View();
-    }
-
-    public IActionResult Privacy()
-    {
-        return View();
-    }
-
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-    }
-}
-

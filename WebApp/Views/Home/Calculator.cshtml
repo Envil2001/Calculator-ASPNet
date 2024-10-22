@@ -1,7 +1,17 @@
 ﻿@{
-    ViewBag.Title = "Kalkulator";
-    Layout = "_Layout";
+    ViewData["Title"] = "Calculator";
 }
 
-<h1>@ViewBag.Title</h1>
-<h2>Wynik obliczen @ViewBag.Num1 @ViewBag.Operator @ViewBag.Num2 = @ViewBag.Result</h2>
+<h1>@ViewData["Title"]</h1>
+
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="alert alert-danger">
+        <h3>Błąd</h3>
+        <p>@ViewBag.ErrorMessage</p>
+    </div>
+}
+else
+{
+    <h2>Wynik działania dla @ViewBag.Num1 @ViewBag.Operator @ViewBag.Num2 = @ViewBag.Result</h2>
+}

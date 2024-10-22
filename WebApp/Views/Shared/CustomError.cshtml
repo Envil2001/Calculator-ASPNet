@@ -1,6 +1,10 @@
 ﻿@{
-    ViewData["Error"] = "Error Page";
+ViewData["Title"] = "Error";
 }
-<h1>An Error has Occurred</h1>
 
-<p>@ViewBag.ErrorMessage</p>
+<div class="alert alert-danger">
+    <h3>Błąd</h3>
+    <p>@ViewBag.ErrorMessage</p>
+</div>
+
+<a asp-action="Index" asp-controller="Home" class="btn btn-primary">Powrót do strony głównej</a>
