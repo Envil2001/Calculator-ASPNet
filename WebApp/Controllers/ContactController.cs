@@ -1,77 +1,80 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using WebApp.Models;
+﻿using WebApp.Models;
+using WebApp.Models.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebApp.Controllers;
 
 public class ContactController : Controller
 {
 
-    private static Dictionary<int, ContactModel> _contacts = new()
-    {
-        {
-            1, new ContactModel()
-            {
-                Id = 1,
-                FirstName = "Adam",
-                LastName = "Abecki",
-                Email = "adam@wsei.edu.pl",
-                BirthDate = new DateOnly(2000, 10, 10),
-                PhoneNumber = "+48 222 222 222"
-            }
-        },
-        {
-            2, new ContactModel()
-            {
-                Id = 1,
-                FirstName = "Ewa",
-                LastName = "Bebecka",
-                Email = "ewa@wsei.edu.pl",
-                BirthDate = new DateOnly(2001, 10, 10),
-                PhoneNumber = "+48 222 222 333"
-            }
-        },
-        {
-            3, new ContactModel()
-            {
-                Id = 3,
-                FirstName = "Boba",
-                LastName = "Bobov",
-                Email = "bob@wsei.edu.pl",
-                BirthDate = new DateOnly(1992, 10, 10),
-                PhoneNumber = "+48 222 222 444"
-            }
-        },
-    };
+    private readonly IContactService _contactService;
 
-
-    private static int currentId = 3;
-    // LISTA kontaktow 
-    public IActionResult Index()
+    public ContactController(IContactService contactService)
     {
-        return View(_contacts);
+        _contactService = contactService;
     }
-    // Formularz dodania kontaktu
+
+    // GET: ContactController
+    public ActionResult Index()
+    {
+        return View(_contactService.GetAll());
+    }
+    
+    // GET: ContactController/Detail/5
+    public ActionResult Details(int id)
+    {
+        return View(_contactService.GetById(id));
+    }
+    
+    // GET: ContactController/Create
     [HttpGet]
-    public IActionResult Add()
+    public ActionResult Create()
     {
         return View();
     }
+    
+    // POST: ContactController/Create
     [HttpPost]
-    // Odebranie i zapisanie nowego kontaktu
-    public IActionResult Add(ContactModel model)
+    public ActionResult Create(ContactModel model)
     {
         if (!ModelState.IsValid) {
             return View(model);
         }
 
-        model.Id = ++currentId;
-        _contacts.Add(model.Id, model);
-        return View("Index", _contacts);
+        _contactService.Add(model);
+        return RedirectToAction(nameof(Index));
     }
 
-    public IActionResult Delete(int id)
+    // GET: ContactController/Edit/5
+    public ActionResult Edit(int id)
     {
-        _contacts.Remove(id);
-        return View("Index", _contacts);
+        return View(_contactService.GetById(id));
+    }
+    
+    //POST: ContactController/Edit/5
+    [HttpPost]
+    public ActionResult Edit(ContactModel model)
+    {
+        if (!ModelState.IsValid)
+        {
+            return View();
+        }
+        
+        _contactService.Update(model);
+        return RedirectToAction(nameof(Index));
+    }
+    
+    // GET: ContactController/Delete/5
+    public ActionResult Delete(int id)
+    {
+        return View();
+    }
+    
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public ActionResult Delete(int id, ContactModel model)
+    {
+        _contactService.Delete(id);
+        return RedirectToAction(nameof(Index));
     }
 }
