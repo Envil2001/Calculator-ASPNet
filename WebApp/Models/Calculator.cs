@@ -14,19 +14,14 @@ public class Calculator
     {
         get
         {
-            switch (Operator)
+            return Operator switch
             {
-                case Operators.Add:
-                    return "+";
-                case Operators.Sub:
-                    return "−";
-                case Operators.Mul:
-                    return "×";
-                case Operators.Div:
-                    return "÷";
-                default:
-                    return "";
-            }
+                Operators.Add => "+",
+                Operators.Sub => "−",
+                Operators.Mul => "×",
+                Operators.Div => "÷",
+                _ => ""
+            };
         }
     }
 
@@ -35,23 +30,15 @@ public class Calculator
         return Operator != null && X != null && Y != null;
     }
 
-    public double Calculate() {
-        switch (Operator)
+    public double Calculate()
+    {
+        return Operator switch
         {
-            case Operators.Add:
-                return (double)(X + Y);
-            case Operators.Sub:
-                return (double)(X - Y);
-            case Operators.Mul:
-                return (double)(X * Y);
-            case Operators.Div:
-                if (Y != 0)
-                {
-                    return (double)(X / Y);
-                }
-                return double.NaN;
-            default:
-                return double.NaN;
-        }
+            Operators.Add => X.Value + Y.Value,
+            Operators.Sub => X.Value - Y.Value,
+            Operators.Mul => X.Value * Y.Value,
+            Operators.Div => Y.Value == 0 ? double.NaN : X.Value / Y.Value,
+            _ => double.NaN
+        };
     }
 }

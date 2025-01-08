@@ -29,3 +29,37 @@ D:\Users\ashcherbakov\RiderProjects\LaboratoriumASP NET\WebApp\obj\Debug\net8.0\
 D:\Users\ashcherbakov\RiderProjects\LaboratoriumASP NET\WebApp\obj\Debug\net8.0\WebApp.genruntimeconfig.cache
 D:\Users\ashcherbakov\RiderProjects\LaboratoriumASP NET\WebApp\obj\Debug\net8.0\ref\WebApp.dll
 D:\Users\ashcherbakov\RiderProjects\LaboratoriumASP NET\WebApp\obj\Debug\net8.0\WebApp.sourcelink.json
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\bin\Debug\net8.0\appsettings.json
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\bin\Debug\net8.0\WebApp.staticwebassets.runtime.json
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\bin\Debug\net8.0\WebApp.staticwebassets.endpoints.json
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\bin\Debug\net8.0\WebApp.exe
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\bin\Debug\net8.0\WebApp.deps.json
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\bin\Debug\net8.0\WebApp.runtimeconfig.json
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\bin\Debug\net8.0\WebApp.dll
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\bin\Debug\net8.0\WebApp.pdb
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\obj\Debug\net8.0\WebApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\obj\Debug\net8.0\WebApp.AssemblyInfoInputs.cache
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\obj\Debug\net8.0\WebApp.AssemblyInfo.cs
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\obj\Debug\net8.0\WebApp.csproj.CoreCompileInputs.cache
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\obj\Debug\net8.0\WebApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\obj\Debug\net8.0\WebApp.RazorAssemblyInfo.cache
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\obj\Debug\net8.0\WebApp.RazorAssemblyInfo.cs
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\obj\Debug\net8.0\WebApp.sourcelink.json
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\obj\Debug\net8.0\scopedcss\bundle\WebApp.styles.css
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\obj\Debug\net8.0\scopedcss\projectbundle\WebApp.bundle.scp.css
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\obj\Debug\net8.0\staticwebassets\msbuild.WebApp.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\obj\Debug\net8.0\staticwebassets\msbuild.WebApp.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\obj\Debug\net8.0\staticwebassets\msbuild.build.WebApp.props
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.WebApp.props
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.WebApp.props
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\obj\Debug\net8.0\WebApp.dll
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\obj\Debug\net8.0\refint\WebApp.dll
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\obj\Debug\net8.0\WebApp.pdb
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\obj\Debug\net8.0\WebApp.genruntimeconfig.cache
+C:\Users\sherb\RiderProjects\Calculator-ASPNet\WebApp\obj\Debug\net8.0\ref\WebApp.dll

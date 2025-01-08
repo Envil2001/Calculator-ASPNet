@@ -16,7 +16,7 @@ public class BirthController : Controller
     {
         if (!model.IsValid())
         {
-            ViewBag.ErrorMessage = "Niepoprawne dane.";
+            ViewBag.ErrorMessage = "Niepoprawne dane. Upewnij się, że wprowadziłeś poprawne imię i datę urodzenia.";
             return View("Form");
         }
 
