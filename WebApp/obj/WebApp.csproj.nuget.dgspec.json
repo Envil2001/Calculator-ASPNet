@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sherb\\RiderProjects\\Calculator-ASPNet\\WebApp\\WebApp.csproj": {}
+    "C:\\Users\\sherb\\RiderProjects\\Labs\\WebApp\\WebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sherb\\RiderProjects\\Calculator-ASPNet\\WebApp\\WebApp.csproj": {
+    "C:\\Users\\sherb\\RiderProjects\\Labs\\WebApp\\WebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sherb\\RiderProjects\\Calculator-ASPNet\\WebApp\\WebApp.csproj",
+        "projectUniqueName": "C:\\Users\\sherb\\RiderProjects\\Labs\\WebApp\\WebApp.csproj",
         "projectName": "WebApp",
-        "projectPath": "C:\\Users\\sherb\\RiderProjects\\Calculator-ASPNet\\WebApp\\WebApp.csproj",
+        "projectPath": "C:\\Users\\sherb\\RiderProjects\\Labs\\WebApp\\WebApp.csproj",
         "packagesPath": "C:\\Users\\sherb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sherb\\RiderProjects\\Calculator-ASPNet\\WebApp\\obj\\",
+        "outputPath": "C:\\Users\\sherb\\RiderProjects\\Labs\\WebApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sherb\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -36,7 +36,7 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         }
       },
       "frameworks": {
@@ -53,6 +53,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.11, 8.0.11]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[8.0.11, 8.0.11]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.11, 8.0.11]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.11, 8.0.11]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -61,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\sherb\\.dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\sherb\\.dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
