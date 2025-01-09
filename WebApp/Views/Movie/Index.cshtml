@@ -2,9 +2,9 @@
 @model WebApp.Models.PagingListAsync<WebApp.Models.Movies.Movie>
 
 @{
-ViewData["Title"] = "Index";
-Layout = "~/Views/Shared/_Layout.cshtml";
-CancellationToken token = CancellationToken.None;
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    CancellationToken token = CancellationToken.None;
 }
 
 <h1>Index</h1>
@@ -12,6 +12,8 @@ CancellationToken token = CancellationToken.None;
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+<h3>Last visit: @ViewData["Visit"]</h3>
 <table class="table">
     <thead>
     <tr>

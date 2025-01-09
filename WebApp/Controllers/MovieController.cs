@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using WebApp.Middleware;
 using WebApp.Models;
 using WebApp.Models.Movies;
 
@@ -22,6 +24,8 @@ namespace WebApp.Controllers
         // GET: Movie
         public IActionResult Index(int page = 1, int size = 10)
         {
+            ViewData["Visit"] = HttpContext.Items[LastVisitCookie.CookieName];
+            
             var totalItems = _context.Movies.Count();
             var movies = _context.Movies
                 .OrderBy(m => m.Title)
@@ -174,6 +178,11 @@ namespace WebApp.Controllers
         private bool MovieExists(int id)
         {
             return _context.Movies.Any(e => e.MovieId == id);
+        }
+        
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

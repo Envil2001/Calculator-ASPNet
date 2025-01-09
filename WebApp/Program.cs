@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using WebApp.Middleware;
 using WebApp.Models.Movies;
 
 namespace WebApp;
@@ -31,7 +32,7 @@ public class Program
         app.UseHttpsRedirection();
         app.UseStaticFiles();
         app.UseRouting();
-
+        app.UseMiddleware<LastVisitCookie>();
         app.UseAuthentication();
         app.UseAuthorization();
 
