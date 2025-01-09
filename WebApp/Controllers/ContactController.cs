@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using WebApp.Models;
 using WebApp.Services;
 
 namespace WebApp.Controllers;
 
+[Authorize(Roles = "Admin")]
 public class ContactController : Controller
 {
     private readonly IContactService _contactService;
@@ -14,6 +16,7 @@ public class ContactController : Controller
         _contactService = contactService;
     }
 
+    [AllowAnonymous]
     public IActionResult Index()
     {
         var contacts = _contactService.FindAll(); 

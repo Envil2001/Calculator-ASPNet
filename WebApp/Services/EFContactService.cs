@@ -6,7 +6,7 @@ namespace WebApp.Services;
 
 public class EFContactService : IContactService
 {
-    private AppDbContext _context;
+    private readonly AppDbContext _context;
 
     public EFContactService(AppDbContext context)
     {
@@ -21,7 +21,7 @@ public class EFContactService : IContactService
     public int Add(Contact contact)
     {
         var e = _context.Contacts.Add(ContactMapper.ToEntity(contact));
-        _context.SaveChanges();
+        _context.SaveChanges(); // Теперь SaveChanges должен работать
         return e.Entity.Id;
     }
 
@@ -31,14 +31,14 @@ public class EFContactService : IContactService
         if (find != null)
         {
             _context.Contacts.Remove(find);
-            _context.SaveChanges();
+            _context.SaveChanges(); // Теперь SaveChanges должен работать
         }
     }
 
     public List<Contact> FindAll()
     {
         return _context.Contacts
-            .Include(c => c.Organization) 
+            .Include(c => c.Organization)
             .Select(e => ContactMapper.FromEntity(e))
             .ToList();
     }
@@ -53,6 +53,6 @@ public class EFContactService : IContactService
     {
         var entity = ContactMapper.ToEntity(contact);
         _context.Contacts.Update(entity);
-        _context.SaveChanges();
+        _context.SaveChanges(); // Теперь SaveChanges должен работать
     }
 }
