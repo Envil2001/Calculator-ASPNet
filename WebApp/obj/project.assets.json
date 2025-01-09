@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sherb\\RiderProjects\\Calculator-ASPNet\\WebApp\\WebApp.csproj",
+      "projectUniqueName": "C:\\Users\\sherb\\RiderProjects\\Laboratoriums\\WebApp\\WebApp.csproj",
       "projectName": "WebApp",
-      "projectPath": "C:\\Users\\sherb\\RiderProjects\\Calculator-ASPNet\\WebApp\\WebApp.csproj",
+      "projectPath": "C:\\Users\\sherb\\RiderProjects\\Laboratoriums\\WebApp\\WebApp.csproj",
       "packagesPath": "C:\\Users\\sherb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sherb\\RiderProjects\\Calculator-ASPNet\\WebApp\\obj\\",
+      "outputPath": "C:\\Users\\sherb\\RiderProjects\\Laboratoriums\\WebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\sherb\\AppData\\Roaming\\NuGet\\NuGet.Config"
