@@ -6,4 +6,15 @@
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Birth\Form.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Birth\Result.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Calculator\Form.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Calculator\Result.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Contact\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Contact\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Contact\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Contact\Index.cshtml" />
+    </ItemGroup>
+
 </Project>

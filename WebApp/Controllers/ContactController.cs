@@ -1,12 +1,8 @@
-﻿using WebApp.Models;
-using WebApp.Models.Services;
-using Microsoft.AspNetCore.Mvc;
-
-namespace WebApp.Controllers;
+﻿using Microsoft.AspNetCore.Mvc;
+using WebApp.Models;
 
 public class ContactController : Controller
 {
-
     private readonly IContactService _contactService;
 
     public ContactController(IContactService contactService)
@@ -14,67 +10,76 @@ public class ContactController : Controller
         _contactService = contactService;
     }
 
-    // GET: ContactController
-    public ActionResult Index()
+    public IActionResult Index()
     {
-        return View(_contactService.GetAll());
+        return View(_contactService.FindAll());
     }
-    
-    // GET: ContactController/Detail/5
-    public ActionResult Details(int id)
-    {
-        return View(_contactService.GetById(id));
-    }
-    
-    // GET: ContactController/Create
+
     [HttpGet]
-    public ActionResult Create()
+    public IActionResult Create()
     {
         return View();
     }
-    
-    // POST: ContactController/Create
-    [HttpPost]
-    public ActionResult Create(ContactModel model)
-    {
-        if (!ModelState.IsValid) {
-            return View(model);
-        }
 
-        _contactService.Add(model);
-        return RedirectToAction(nameof(Index));
-    }
-
-    // GET: ContactController/Edit/5
-    public ActionResult Edit(int id)
-    {
-        return View(_contactService.GetById(id));
-    }
-    
-    //POST: ContactController/Edit/5
     [HttpPost]
-    public ActionResult Edit(ContactModel model)
+    public IActionResult Create(Contact model)
     {
-        if (!ModelState.IsValid)
+        if (ModelState.IsValid)
         {
-            return View();
+            _contactService.Add(model);
+            return RedirectToAction("Index");
         }
-        
-        _contactService.Update(model);
-        return RedirectToAction(nameof(Index));
+        return View(model);
     }
-    
-    // GET: ContactController/Delete/5
-    public ActionResult Delete(int id)
+
+    [HttpGet]
+    public IActionResult Edit(int id)
     {
-        return View();
+        var book = _contactService.FindById(id);
+        if (book == null)
+        {
+            return NotFound();
+        }
+        return View(book);
     }
-    
+
     [HttpPost]
-    [ValidateAntiForgeryToken]
-    public ActionResult Delete(int id, ContactModel model)
+    public IActionResult Edit(Contact model)
+    {
+        if (ModelState.IsValid)
+        {
+            _contactService.Update(model);
+            return RedirectToAction("Index");
+        }
+        return View(model);
+    }
+
+    [HttpGet]
+    public IActionResult Details(int id)
+    {
+        var book = _contactService.FindById(id);
+        if (book == null)
+        {
+            return NotFound();
+        }
+        return View(book);
+    }
+
+    [HttpGet]
+    public IActionResult Delete(int id)
+    {
+        var book = _contactService.FindById(id);
+        if (book == null)
+        {
+            return NotFound();
+        }
+        return View(book);
+    }
+
+    [HttpPost]
+    public IActionResult DeleteConfirmed(int id)
     {
         _contactService.Delete(id);
-        return RedirectToAction(nameof(Index));
+        return RedirectToAction("Index");
     }
 }

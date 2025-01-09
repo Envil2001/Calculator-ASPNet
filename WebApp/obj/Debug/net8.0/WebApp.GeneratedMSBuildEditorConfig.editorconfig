@@ -20,24 +20,12 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/sherb/RiderProjects/Labs/WebApp/Views/Birth/Form.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlydGhcRm9ybS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/sherb/RiderProjects/Labs/WebApp/Views/Birth/Result.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlydGhcUmVzdWx0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/sherb/RiderProjects/Labs/WebApp/Views/Calculator/Form.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FsY3VsYXRvclxGb3JtLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/sherb/RiderProjects/Labs/WebApp/Views/Calculator/Result.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FsY3VsYXRvclxSZXN1bHQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/sherb/RiderProjects/Labs/WebApp/Views/Contact/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sherb/RiderProjects/Labs/WebApp/Views/Contact/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/sherb/RiderProjects/Labs/WebApp/Views/Contact/Details.cshtml]
@@ -50,18 +38,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/sherb/RiderProjects/Labs/WebApp/Views/Contact/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/sherb/RiderProjects/Labs/WebApp/Views/Home/About.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/sherb/RiderProjects/Labs/WebApp/Views/Home/Age.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZ2UuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/sherb/RiderProjects/Labs/WebApp/Views/Home/Calculator.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYWxjdWxhdG9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/sherb/RiderProjects/Labs/WebApp/Views/Home/Index.cshtml]

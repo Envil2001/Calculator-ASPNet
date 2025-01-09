@@ -1,48 +1,22 @@
-﻿@model ContactModel
+﻿@model WebApp.Models.Contact
 
-@{
-    ViewBag.Title = "title";
-    Layout = "_Layout";
-}
-
-
-<div class="container">
-    <h2>Dodaj kontakt</h2>
-    <form asp-action="Create" method="post">
-        <div class="form-group">
-            <label asp-for="FirstName">Imię</label>
-            <input type="text" class="form-control" id="FirstName" asp-for="FirstName" />
-            <span asp-validation-for="FirstName" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="LastName">Nazwisko</label>
-            <input type="text" class="form-control" id="LastName" asp-for="LastName" />
-            <span asp-validation-for="LastName" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Email">Email</label>
-            <input type="email" class="form-control" id="Email" asp-for="Email" />
-            <span asp-validation-for="Email" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="BirthDate">Data urodzenia</label>
-            <input type="date" class="form-control" id="BirthDate" asp-for="BirthDate" />
-            <span asp-validation-for="BirthDate" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="PhoneNumber">Telefon</label>
-            <input type="text" class="form-control" id="PhoneNumber" asp-for="PhoneNumber" />
-            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
-        </div>
-        <div class="mb-3">
-            <label class="form-label" asp-for="Category">Kategoria</label>
-            <select class="form-control"
-                    asp-for="Category"
-                    asp-items="@Html.GetEnumSelectList<Category>()">
-            </select>
-            <span asp-validation-for="Category"></span>
-        </div>
-        <button type="submit" class="btn btn-primary">Zapisz</button>
-        <a href="@Url.Action("Index")" class="text-danger button"><i class="la la-undo button__icon"></i>Cancel</a>
-    </form>
-</div>
+<h2>Dodaj nowy kontakt</h2>
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Name">Imię</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Priority">Priorytet</label>
+        <select asp-for="Priority" asp-items="@Html.GetEnumSelectList<Priority>()" class="form-control"></select>
+        <span asp-validation-for="Priority" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Zapisz</button>
+</form>
